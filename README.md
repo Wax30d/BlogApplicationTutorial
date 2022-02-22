@@ -3,7 +3,7 @@ Building a blog application.
 
 Project will cover the following topics:
   - Installing Django
-  - Creating and conﬁguring a Django project
+  - Creating and conﬁguring a Django project/venv
   - Creating a Django application
   - Designing models and generating model migrations
   - Creating an administration site for your models
