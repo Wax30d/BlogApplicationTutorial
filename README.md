@@ -7,7 +7,7 @@ Project will cover the following topics:
   - Creating a Django application
   - Designing models and generating model migrations
   - Creating an administration site for your models
-  - Working with QuerySets and managers
+  - Working with QuerySets and managers (not need)
   - Building views, templates, and URLs
   - Adding pagination to list views
   - Using Django's class-based views
