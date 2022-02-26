@@ -1,0 +1,30 @@
+<!--tells Django to load the static template tags that-->
+<!--are provided by the django.contrib.staticfiles application, which is-->
+<!--contained in the INSTALLED_APPS setting. After loading them, you are-->
+<!--able to use the {% static %} template tag throughout this template.-->
+<!--With this template tag, you can include the static ﬁles, such as the-->
+<!--blog.css ﬁle, which you will ﬁnd in the code of this example under-->
+<!--the static/ directory of the blog application-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>{% block title %}{% endblock %}</title>
+      <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>Shaxzodbek Sobitov</h2>
+        <p>Welcome to my corner.</p>
+    </div>
+  </body>
+</html>
+
+<!--You can see that there are two {% block %} tags. These tell Django-->
+<!--that you want to deﬁne a block in that area. Templates that inherit-->
+<!--from this template can ﬁll in the blocks with content. You have-->
+<!--deﬁned a block called title and a block called content .-->

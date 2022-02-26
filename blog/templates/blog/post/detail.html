@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{{ post.title }}{% endblock %}
+</head>
+<body>
+    {% block content %}
+        <h1>{{ post.title }}</h1>
+        <p class="date">
+            Published {{ post.publish }} by {{ post.author }}
+        </p>
+        {{ post.body|linebreaks }}
+    {% endblock %}
+</body>
+</html>
