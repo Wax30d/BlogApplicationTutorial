@@ -55,3 +55,10 @@ of the object. Django will use it in many places, such as the
 administration site."""
     def __str__(self):
         return self.title
+
+    # used the get_absolute_url() method in your templates to link to speciﬁc posts.
+    def get_absolute_url(self):
+        return reverse('blog:post_detail',
+                       args=[self.publish.year,
+                             self.publish.month,
+                             self.publish.day, self.slug])
