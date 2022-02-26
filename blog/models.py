@@ -1,6 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
+
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status='published')
 
 
 class Post(models.Model):
@@ -41,6 +47,9 @@ class Post(models.Model):
     # You use a choices parameter,
     # so the value of this ﬁeld can only be set to one of the given choices.
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+
+    objects = models.Manager()  # The default manager.
+    published = PublishedManager()  # Our custom manager.
 
     """The Meta class inside the model contains metadata. You tell Django
 to sort results by the publish ﬁeld in descending order by default

@@ -1,4 +1,4 @@
-<!--With the {% extends %} template tag, you tell Django to inherit from-->
+<!--With the extends template tag, you tell Django to inherit from-->
 <!--the blog/base.html template. Then, you ﬁll the title and content-->
 <!--blocks of the base template with content. You iterate through the-->
 <!--posts and display their title, date, author, and body, including a link-->
@@ -23,12 +23,12 @@
         <h1>My Blog</h1>
         {% for post in posts %}
             <h2>
-                <a href="{{ post.get_absolute_url }}">
+                <a href="{{ post.slug }}">
                     {{ post.title }}
                 </a>
             </h2>
             <p class="date">
-                Published {{ post.publish }} by {{ post.author }
+                Published {{ post.publish }} by {{ post.author }}
             </p>
             {{ post.body|truncatewords:30|linebreaks }}
         {% endfor %}
